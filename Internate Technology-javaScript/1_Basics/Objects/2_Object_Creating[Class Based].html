@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2 Object Creation [Class Based]</title>
+</head>
+<body>
+
+<script>
+    class Student {
+        //attribute
+
+        //constructor
+        constructor(id,fname,lname,address) {
+            this.id = id;
+            this.fname = fname;
+            this.lname = lname;
+            this.address = address;
+        }
+
+        //methods
+        get id(){
+            return "ID_" + this._id;
+        }
+        set id(id){
+            this._id = id;
+        }
+        get fname(){
+            return "Fname_" + this._fname;
+        }
+        set fname(fname){
+            this._fname = fname;
+        }
+        get lname(){
+            return "Lname_" + this._lname;
+        }
+        set lname(lname){
+            this._lname = lname;
+        }
+        get address(){
+            return "Address_" + this._id;
+        }
+        set address(address){
+            this._address = address;
+        }
+
+        static getTest(){
+            return "test";
+        }
+
+    }
+
+    const kamal = new Student(1,'Kamal','Silva','Panadura');
+    console.log(kamal);
+    console.log(kamal._id);
+    console.log(kamal._fname);
+    console.log(kamal._lname);
+    console.log(kamal._address);
+
+    let id = kamal.id
+    console.log(id);
+
+    kamal.id = 2;
+    console.log(kamal);
+    console.log(kamal.fname);
+    console.log(kamal.lname);
+    console.log(kamal.address);
+
+   /* let studentId = Student.id;
+    console.log(studentId);*/
+
+    let test = Student.getTest()
+    console.log(test);
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KITT</title>
+    <style>
+        body{
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            background: black;
+        }
+        #light-panel{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+
+            width: fit-content;
+            height: fit-content;
+        }
+        #light-panel .light{
+            width: 50px;
+            height: 20px;
+            border: 0.5px solid gray;
+            display: inline-block;
+        }
+
+        #btn-pnl{
+            position: absolute;
+            width: fit-content;
+            height: fit-content;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 10vh;
+            margin: auto;
+        }
+
+        #start{
+            background-color: lime;
+            width: 70px;
+            height: 30px;
+            border-radius: 30%;
+            border: none;
+        }
+        #stop{
+            background-color: red;
+            width: 70px;
+            height: 30px;
+            border-radius: 30%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+<section id="light-panel">
+    <div class="light"></div>
+    <div class="light"></div>
+    <div class="light"></div>
+    <div class="light"></div>
+    <div class="light"></div>
+    <div class="light"></div>
+    <div class="light"></div>
+    <div class="light"></div>
+    <div class="light"></div>
+    <div class="light"></div>
+    <div class="light"></div>
+</section>
+
+<section id="btn-pnl">
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</section>
+
+<audio id="audio" src="../../assets/audio/Knight Rider Sms ! Knight Rider ! Theme.mp3"></audio>
+
+<script src="../../assets/lib/jquery-3.6.4.min.js"></script>
+
+<script>
+    var LightNumber = 1;
+    var direction = "RIGHT"
+    var intervalID = null;
+
+    var Lights = $('.light')
+
+    console.log(Lights)
+    /*Lights[LightNumber].style.background = 'red';*/
+
+    function updateLights(){
+        /*console.log('updates!');*/
+        $('.light').css({background: 'black'});
+
+        Lights[LightNumber].style.background = 'red';
+
+
+        if (LightNumber > 0){
+            Lights[LightNumber - 1].style.background = 'pink';
+        }
+        if (LightNumber < 10){
+            Lights[LightNumber + 1].style.background = 'pink';
+        }
+        if (LightNumber === 10){
+            direction = 'LEFT'
+        }
+        if (direction === 'RIGHT'){
+            LightNumber++;
+        }else{
+            LightNumber--;
+        }
+        if (LightNumber === 0){
+            direction = 'RIGHT'
+        }
+
+    }
+
+    $('#start').on('click',() => {
+        $('#audio')[0].play();
+        intervalID = setInterval(updateLights,100)
+    });
+    $('#stop').on('click',() => {
+        $('#audio')[0].pause();
+        clearInterval(intervalID);
+    });
+</script>
+</body>
+</html>

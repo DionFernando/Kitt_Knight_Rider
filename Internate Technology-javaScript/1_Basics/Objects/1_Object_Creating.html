@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1 JavaScript Objects</title>
+</head>
+<body>
+
+<script>
+    function Student(id,fname,lname,address){
+        //attribute
+        this.id=id;
+        this.fname=fname;
+        this.lname=lname;
+        this.address=address;
+
+        //methods
+    }
+
+    const Kasun = new Student(1,'Kasun','Mendis','Panadura');
+    console.log(Kasun);
+
+    const Lahiru = new Student(2,'Lahiru','Sadda','Horana');
+    console.log(Lahiru);
+
+    console.log(Kasun instanceof Student);
+    // console.log(Kasun instanceof Teacher);
+
+    console.log(Kasun["id"]);
+    console.log(Lahiru["id"]);
+    console.log(Kasun["fname"]);
+    console.log(Kasun["lname"]);
+    console.log(Kasun["address"]);
+
+    Kasun['fname'] = 'Chamila';
+    console.log(Kasun);
+
+    Kasun['grade'] = "10";
+    console.log(Kasun);
+
+    delete Kasun['grade'];
+    console.log(Kasun);
+
+    console.log(Kasun.id);
+    console.log(Kasun.fname);
+    console.log(Kasun.lname);
+    console.log(Kasun.address);
+    console.log(Kasun.grade);
+
+    Kasun.address = "Japan";
+    console.log(Kasun);
+
+
+    function Employee(id,fname,lname,address){
+        //attribute
+        this.id=id;
+        this.fname=fname;
+        this.lname=lname;
+        this.address=address;
+
+        //methods
+        this.getFname = function (){
+            return this.fname;
+        }
+        this.setFname = function (fname){
+             this.fname = fname;
+        }
+    }
+
+    const pathum = new Employee(1,'Pathum','Dimantha','Colombo');
+    console.log(pathum);
+
+    let fname = pathum.getFname();
+    console.log(fname);
+
+    pathum.setFname('Mathew');
+    console.log(pathum)
+
+
+
+
+</script>
+
+</body>
+</html>

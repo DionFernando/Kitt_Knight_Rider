@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1 select dom</title>
+</head>
+<body>
+<h1 class="main">Hello ijse Student</h1>
+<h2 class="main">HTML Module</h2>
+<p id="p1">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid architecto aspernatur blanditiis corporis, exercitationem fuga fugit in laudantium magni maiores nihil quasi quia reiciendis repellendus saepe suscipit unde voluptate?
+</p>
+
+<h2>CSS Module</h2>
+<p class="myTexy">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid architecto aspernatur blanditiis corporis, exercitationem fuga fugit in laudantium magni maiores nihil quasi quia reiciendis repellendus saepe suscipit unde voluptate?
+</p>
+
+<h2>JS Module</h2>
+<p class="myText">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid architecto aspernatur blanditiis corporis, exercitationem fuga fugit in laudantium magni maiores nihil quasi quia reiciendis repellendus saepe suscipit unde voluptate?
+</p>
+
+<h2>HTML Module</h2>
+<p class="myText">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid architecto aspernatur blanditiis corporis, exercitationem fuga fugit in laudantium magni maiores nihil quasi quia reiciendis repellendus saepe suscipit unde voluptate?
+</p>
+<ul>
+    <li>
+        java
+    </li>
+    <li>phython</li>
+    <li>Css</li>
+</ul>
+
+
+    <!--<input type="text" name="username"><br>
+    <input type="password" name="password"><br>
+    <button>click!</button>-->
+    <input type="text"name="url input"><br>
+    <button>button</button>
+    <br>
+
+
+<img src="" alt="img">
+<script>
+    //document.getElementsByClassName(p);
+    //document.getElementById("p1");
+   // document.querySelector(".myText");
+    //document.getElementsByTagName("h2")[0].innerText;
+    //document.getElementsByName("username")[0].setAttribute("placeholder","username");
+    //document.getElementsByName("password")[0].setAttribute("placeholder","password");
+
+    /*document.getElementsByTagName("button")[0].addEventListener("click",function (){
+        document.getElementsByTagName("img")[0].setAttribute('src',document.getElementsByTagName("input")[0].value)
+    })*/
+    document.querySelector("button").addEventListener("click",function (){
+        //step 1 get value from the text field
+        document.querySelector("img").setAttribute("src",document.getElementsByName("url input")[0].value)
+        // step 2 set that value to img src attribute
+    })
+</script>
+</body>
+</html>

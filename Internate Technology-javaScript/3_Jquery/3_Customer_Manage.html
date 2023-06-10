@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+<div class="modal-content">
+    <div class="modal-header bg-success">
+        <h4 class="modal-title">New Customer</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+    </div>
+    <div class="modal-body">
+        <div class="form-group ">
+            <label >Customer Name :</label>
+            <input id="cusTxt" type="text" class="form-control">
+            <label >Age :</label>
+            <input id="AgeTxt" type="text" class="form-control">
+            <label>Tp :</label>
+            <input id="txtTP" type="text" class="form-control">
+            <label>salary :</label>
+            <input id="SalaryTxt" type="text" class="form-control">
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger" id="btn-add">Save</button>
+        <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+    </div>
+</div>
+<table class="table" id="tbl">
+    <thead>
+    <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Telephone</th>
+        <th scope="col">Salary</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+<script src="../assets/lib/jquery-3.6.4.min.js"></script>
+<script>
+    document.getElementById("btn-add").addEventListener('click', function (){
+      /*  console.log(document.getElementById("cusTxt").innerText);
+        console.log(document.getElementById("cusTxt").innerHTML);*/
+
+        var name = $('#cusTxt').val();
+        var age = $('#AgeTxt').val();
+        var tel = $('#txtTP').val();
+        var salary = $('#SalaryTxt').val();
+
+        var tr = document.createElement('tr');
+
+        var td1 = tr.appendChild(document.createElement('td'));
+        var td2 = tr.appendChild(document.createElement('td'));
+        var td3 = tr.appendChild(document.createElement('td'));
+        var td4 = tr.appendChild(document.createElement('td'));
+
+        td1.innerHTML = name;
+        td2.innerHTML = age;
+        td3.innerHTML = tel;
+        td4.innerHTML = salary;
+
+        document.getElementById("tbl").appendChild(tr);
+    })
+</script>
+
+
+</body>
+</html>

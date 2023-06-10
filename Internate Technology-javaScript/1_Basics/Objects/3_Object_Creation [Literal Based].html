@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3 Literal Based</title>
+</head>
+<body>
+
+<script>
+    let Student = {
+        id : 1,
+        fname : 'Tharindu',
+        lname : 'Ranawaka',
+        address : {
+            address_line1 : '123A',
+            address_line2 : 'Flower Rd',
+            address_line3 : 'Colombo',
+            address_line4 : 'Sri Lanka',
+        },
+        beverages : ['tea','coffee','faluda']
+    }
+
+    console.log(typeof Student);
+    console.log(Student['id']);
+    console.log(Student.id);
+
+    console.log(Student.address.country);
+    console.log(Student["address"]["country"]);
+
+    Student['fname'] = 'Buruwa';
+    console.log(Student);
+
+    delete Student['address'];
+    console.log(Student);
+
+    Student.address = "Moratuwa";
+    console.log(Student);
+
+    Student['Marks'] = "85";
+    console.log(Student);
+
+</script>
+
+</body>
+</html>
